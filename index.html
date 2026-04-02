@@ -70,12 +70,38 @@ h2 {
   margin-bottom: 20px;
 }
 
-.video iframe {
-  width: 100%;
+.video-card {
   max-width: 800px;
-  height: 450px;
-  border-radius: 12px;
-  border: none;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.video-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.video-content {
+  padding: 25px;
+}
+
+.video-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 14px 24px;
+  background: #0f172a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.video-button:hover {
+  background: #1e293b;
 }
 
 .signup {
@@ -115,6 +141,13 @@ button:hover {
   color: #777;
   margin-top: 10px;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    justify-content: center;
+  }
+}
 </style>
 </head>
 
@@ -153,13 +186,15 @@ button:hover {
   <h2>See It In Action</h2>
   <p>Watch a video demonstrating the current model and overall concept.</p>
 
-  <!-- ✅ YOUR ACTUAL VIDEO (FIXED) -->
-  <iframe 
-    src="https://www.youtube.com/embed/BjxiehGgbHU"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-
+  <div class="video-card">
+    <img src="https://img.youtube.com/vi/BjxiehGgbHU/maxresdefault.jpg" alt="DesktopMold video thumbnail">
+    <div class="video-content">
+      <p>Click below to watch the demo video on YouTube.</p>
+      <a class="video-button" href="https://youtu.be/BjxiehGgbHU" target="_blank">
+        Watch the Video
+      </a>
+    </div>
+  </div>
 </section>
 
 <section>
