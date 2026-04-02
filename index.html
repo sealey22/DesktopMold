@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DesktopMold | Desktop Injection Molding Concept</title>
+  <title>DesktopMold</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +14,6 @@
 
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       background-color: #f7f7f7;
       color: #222;
     }
@@ -26,346 +26,208 @@
 
     .container {
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
+      margin: auto;
     }
 
     .hero {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
       flex-wrap: wrap;
+      gap: 40px;
     }
 
     .hero-text {
-      flex: 1 1 480px;
+      max-width: 500px;
     }
 
     .hero-text h1 {
       font-size: 2.8rem;
-      margin-bottom: 18px;
-      line-height: 1.2;
+      margin-bottom: 15px;
     }
 
     .hero-text p {
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-      color: #dbeafe;
+      color: #cbd5e1;
+      margin-bottom: 10px;
     }
 
     .hero-note {
-      font-size: 1rem;
-      color: #cbd5e1;
       font-style: italic;
-      margin-top: 10px;
+      color: #94a3b8;
     }
 
-    .hero-button {
-      display: inline-block;
-      margin-top: 12px;
-      background: #f97316;
-      color: white;
-      text-decoration: none;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.2s ease;
-    }
-
-    .hero-button:hover {
-      background: #ea580c;
-    }
-
-    .hero-image {
-      flex: 1 1 360px;
-      text-align: center;
-    }
-
-    .hero-image img {
-      max-width: 100%;
+    .hero img {
       width: 420px;
-      border-radius: 16px;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+      max-width: 100%;
+      border-radius: 12px;
       background: white;
+      padding: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
     section {
       padding: 70px 20px;
-    }
-
-    section:nth-child(even) {
-      background: #ffffff;
+      text-align: center;
     }
 
     h2 {
       font-size: 2rem;
-      margin-bottom: 18px;
-      text-align: center;
-      color: #111827;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      margin: 0 auto 36px auto;
-      text-align: center;
-      color: #4b5563;
-      font-size: 1.05rem;
+      margin-bottom: 20px;
     }
 
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-      margin-top: 20px;
+      gap: 20px;
+      margin-top: 30px;
     }
 
     .feature-card {
       background: #f8fafc;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-    }
-
-    .feature-card h3 {
-      margin-bottom: 10px;
-      color: #0f172a;
-      font-size: 1.15rem;
-    }
-
-    .feature-card p {
-      color: #475569;
-      font-size: 0.98rem;
-    }
-
-    .video-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .video-wrapper p {
-      margin-bottom: 22px;
-      color: #4b5563;
-      font-size: 1.05rem;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
     .video-card {
+      max-width: 800px;
+      margin: 30px auto;
       background: white;
-      border-radius: 14px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
     .video-card img {
       width: 100%;
-      display: block;
     }
 
-    .video-card-content {
-      padding: 24px;
+    .video-content {
+      padding: 20px;
     }
 
-    .video-card-content p {
-      margin-bottom: 18px;
-      color: #4b5563;
-    }
-
-    .video-link-btn {
+    .video-button {
       display: inline-block;
+      margin-top: 10px;
+      padding: 12px 20px;
       background: #0f172a;
       color: white;
       text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: bold;
-      transition: background 0.2s ease;
     }
 
-    .video-link-btn:hover {
+    .video-button:hover {
       background: #1e293b;
     }
 
-    .signup-box {
-      max-width: 700px;
-      margin: 0 auto;
+    .signup {
+      max-width: 600px;
+      margin: auto;
       background: white;
-      padding: 36px;
-      border-radius: 16px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
-    .signup-box h2 {
-      margin-bottom: 12px;
-    }
-
-    .signup-box p {
-      text-align: center;
-      color: #4b5563;
-      margin-bottom: 24px;
-    }
-
-    form {
-      display: grid;
-      gap: 16px;
-    }
-
-    input {
+    input, textarea {
       width: 100%;
-      padding: 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
     button {
+      width: 100%;
+      padding: 12px;
       background: #0f172a;
       color: white;
       border: none;
-      padding: 14px;
-      font-size: 1rem;
+      border-radius: 6px;
       font-weight: bold;
-      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.2s ease;
     }
 
     button:hover {
       background: #1e293b;
     }
 
-    .small-note {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #6b7280;
-      margin-top: 14px;
-    }
-
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      .hero-text h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero {
-        text-align: center;
-      }
-
-      .hero-button {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-image img {
-        width: 100%;
-        max-width: 360px;
-      }
+    .small {
+      font-size: 14px;
+      color: #777;
+      margin-top: 10px;
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="container hero">
-      <div class="hero-text">
-        <h1>Desktop Injection Molding for Makers</h1>
-        <p>
-          Explore a compact injection molding concept designed for makers, small shops,
-          and engineers.
-        </p>
-        <p class="hero-note">
-          A concept under development by engineering students at CMU
-        </p>
-        <a href="#signup" class="hero-button">Stay Updated</a>
-      </div>
+<header>
+  <div class="container hero">
 
-      <div class="hero-image">
-        <img src="machine.png" alt="Desktop injection molder concept render" />
-      </div>
-    </div>
-  </header>
-
-  <section>
-    <div class="container">
-      <h2>The Idea</h2>
-      <p class="section-intro">
-        Traditional injection molding is powerful but expensive and inaccessible.
-        This concept aims to bring that capability to a desktop-sized machine for prototyping and small production.
+    <div class="hero-text">
+      <h1>Desktop Injection Molding for Makers</h1>
+      <p>
+        Explore a compact injection molding concept designed for makers, small shops, and engineers.
       </p>
 
-      <div class="features">
-        <div class="feature-card">
-          <h3>Compact Footprint</h3>
-          <p>
-            Designed as a desktop-sized concept for workshops, labs, and maker spaces.
-          </p>
-        </div>
-        <div class="feature-card">
-          <h3>Rapid Iteration</h3>
-          <p>
-            Intended to help users move beyond slow print cycles and test molded parts more efficiently.
-          </p>
-        </div>
-        <div class="feature-card">
-          <h3>Accessible Manufacturing</h3>
-          <p>
-            Built around the idea of making small-batch plastic part production more approachable.
-          </p>
-        </div>
-      </div>
+      <p class="hero-note">
+        A concept under development by engineering students at CMU
+      </p>
     </div>
-  </section>
 
-  <section>
-    <div class="container">
-      <div class="video-wrapper">
-        <h2>See It in Action</h2>
-        <p>Watch a video demonstrating the current model and overall concept.</p>
-
-        <div class="video-card">
-          <img src="https://img.youtube.com/vi/BjxiehGgbHU/maxresdefault.jpg" alt="DesktopMold video thumbnail">
-          <div class="video-card-content">
-            <p>Click below to watch the demo video on YouTube.</p>
-            <a class="video-link-btn" href="https://youtu.be/BjxiehGgbHU" target="_blank" rel="noopener noreferrer">
-              Watch the Video
-            </a>
-          </div>
-        </div>
-      </div>
+    <div>
+      <img src="machine.png" alt="Desktop Injection Molder">
     </div>
-  </section>
 
-  <section id="signup">
-    <div class="container">
-      <div class="signup-box">
-        <h2>Interested in This Concept?</h2>
-        <p>
-          Enter your name and email to stay up to date about the product and its progress.
-        </p>
+  </div>
+</header>
 
-        <form action="#" method="post">
-          <input type="text" name="name" placeholder="Your name" required />
-          <input type="email" name="email" placeholder="Your email" required />
-          <button type="submit">Keep Me Updated</button>
-        </form>
+<section>
+  <h2>The Idea</h2>
+  <p>
+    Traditional injection molding is powerful but expensive and inaccessible.
+    This concept aims to bring that capability to a desktop-sized machine.
+  </p>
 
-        <p class="small-note">
-          No spam. Just updates on development and progress.
-        </p>
-      </div>
+  <div class="features">
+    <div class="feature-card">Compact Desktop Concept</div>
+    <div class="feature-card">Faster Prototyping</div>
+    <div class="feature-card">Accessible Manufacturing</div>
+  </div>
+</section>
+
+<section>
+  <h2>See It In Action</h2>
+  <p>Watch a video demonstrating the current model and overall concept.</p>
+
+  <div class="video-card">
+    <img src="https://img.youtube.com/vi/BjxiehGgbHU/maxresdefault.jpg">
+    <div class="video-content">
+      <a href="https://youtu.be/BjxiehGgbHU" target="_blank" class="video-button">
+        Watch the Video
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <p>DesktopMold concept page — validating interest and collecting feedback.</p>
-  </footer>
+<section>
+  <div class="signup">
+    <h2>Interested in This Concept?</h2>
+    <p>Enter your name and email to stay up to date about the product and its progress.</p>
+
+    <!-- ✅ WORKING FORM -->
+    <form action="https://formspree.io/f/xzdjgven" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="use_case" placeholder="What would you use this machine for? (optional)"></textarea>
+      <button type="submit">Keep Me Updated</button>
+    </form>
+
+    <p class="small">No spam. Just updates on progress.</p>
+  </div>
+</section>
 
 </body>
 </html>
