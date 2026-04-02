@@ -3,279 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DesktopMold</title>
+  <title>DesktopMold | Desktop Injection Molding Concept</title>
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f8fafc;
-      color: #1f2937;
       line-height: 1.6;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1120px;
-      margin: 0 auto;
+      background-color: #f7f7f7;
+      color: #222;
     }
 
     header {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      background: linear-gradient(135deg, #0f172a, #1e293b);
       color: white;
-      padding: 28px 0 72px;
+      padding: 60px 20px;
     }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 48px;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
-
-    .nav a {
-      color: #dbeafe;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 0.95rem;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      line-height: 1.1;
-      margin: 0 0 18px;
+    .hero-text {
+      flex: 1 1 480px;
     }
 
-    .hero p {
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
       color: #dbeafe;
-      font-size: 1.08rem;
-      margin: 0 0 14px;
     }
 
     .hero-note {
+      font-size: 1rem;
+      color: #cbd5e1;
       font-style: italic;
-      color: #bfdbfe;
       margin-top: 10px;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .btn {
+    .hero-button {
       display: inline-block;
-      padding: 14px 22px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
+      margin-top: 12px;
       background: #f97316;
       color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.2s ease;
     }
 
-    .btn-primary:hover {
+    .hero-button:hover {
       background: #ea580c;
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.35);
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
     .hero-image {
+      flex: 1 1 360px;
       text-align: center;
     }
 
     .hero-image img {
-      width: 100%;
-      max-width: 430px;
-      border-radius: 18px;
+      max-width: 100%;
+      width: 420px;
+      border-radius: 16px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
       background: white;
-      padding: 12px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
     }
 
     section {
-      padding: 76px 0;
+      padding: 70px 20px;
     }
 
-    .section-title {
+    section:nth-child(even) {
+      background: #ffffff;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 18px;
       text-align: center;
-      font-size: 2.2rem;
-      margin: 0 0 16px;
-      color: #0f172a;
+      color: #111827;
     }
 
-    .section-subtitle {
+    .section-intro {
       max-width: 760px;
-      margin: 0 auto 42px;
+      margin: 0 auto 36px auto;
       text-align: center;
-      color: #475569;
-      font-size: 1.04rem;
+      color: #4b5563;
+      font-size: 1.05rem;
     }
 
-    .cards {
+    .features {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 22px;
+      margin-top: 20px;
     }
 
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 26px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      text-align: left;
+    .feature-card {
+      background: #f8fafc;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     }
 
-    .card h3 {
-      margin-top: 0;
+    .feature-card h3 {
       margin-bottom: 10px;
       color: #0f172a;
+      font-size: 1.15rem;
     }
 
-    .card p {
-      margin: 0;
+    .feature-card p {
       color: #475569;
+      font-size: 0.98rem;
     }
 
-    .video-wrap {
+    .video-wrapper {
       max-width: 900px;
       margin: 0 auto;
       text-align: center;
     }
 
-    .video-wrap p {
-      color: #475569;
-      margin-bottom: 20px;
+    .video-wrapper p {
+      margin-bottom: 22px;
+      color: #4b5563;
+      font-size: 1.05rem;
     }
 
     .video-card {
-      max-width: 850px;
-      margin: 30px auto 0;
       background: white;
-      border-radius: 18px;
+      border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
       overflow: hidden;
-      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
     }
 
     .video-card img {
-      display: block;
       width: 100%;
-      height: auto;
+      display: block;
     }
 
-    .video-content {
-      padding: 28px;
+    .video-card-content {
+      padding: 24px;
     }
 
-    .video-content p {
-      color: #475569;
-      margin: 0 0 18px;
+    .video-card-content p {
+      margin-bottom: 18px;
+      color: #4b5563;
     }
 
-    .video-button {
+    .video-link-btn {
       display: inline-block;
-      padding: 14px 24px;
       background: #0f172a;
       color: white;
       text-decoration: none;
-      border-radius: 10px;
+      padding: 12px 22px;
+      border-radius: 8px;
       font-weight: bold;
       transition: background 0.2s ease;
     }
 
-    .video-button:hover {
+    .video-link-btn:hover {
       background: #1e293b;
-    }
-
-    .signup-section {
-      background: linear-gradient(180deg, #eff6ff, #f8fafc);
     }
 
     .signup-box {
       max-width: 700px;
       margin: 0 auto;
       background: white;
-      border-radius: 20px;
       padding: 36px;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.09);
-      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
     }
 
     .signup-box h2 {
-      margin-top: 0;
-      color: #0f172a;
-      font-size: 2rem;
+      margin-bottom: 12px;
     }
 
     .signup-box p {
-      color: #475569;
+      text-align: center;
+      color: #4b5563;
       margin-bottom: 24px;
     }
 
     form {
       display: grid;
-      gap: 14px;
+      gap: 16px;
     }
 
     input {
       width: 100%;
-      padding: 14px 15px;
+      padding: 14px;
       border: 1px solid #cbd5e1;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 1rem;
-      font-family: inherit;
     }
 
     button {
-      border: 0;
-      padding: 14px 18px;
       background: #0f172a;
       color: white;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
+      border: none;
+      padding: 14px;
       font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
     }
 
     button:hover {
       background: #1e293b;
     }
 
-    .small {
-      font-size: 0.92rem;
-      color: #64748b;
+    .small-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
       margin-top: 14px;
     }
 
@@ -283,31 +245,27 @@
       background: #0f172a;
       color: #cbd5e1;
       text-align: center;
-      padding: 28px 18px;
+      padding: 28px 20px;
       font-size: 0.95rem;
     }
 
-    @media (max-width: 900px) {
-      .hero,
-      .cards {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.2rem;
       }
 
       .hero {
         text-align: center;
       }
 
-      .hero-buttons {
-        justify-content: center;
+      .hero-button {
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .nav {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .card {
-        text-align: center;
+      .hero-image img {
+        width: 100%;
+        max-width: 360px;
       }
     }
   </style>
@@ -315,81 +273,67 @@
 <body>
 
   <header>
-    <div class="container">
-      <div class="nav">
-        <div class="logo">DesktopMold</div>
-        <div>
-          <a href="#idea">The Idea</a>
-          <a href="#video">Video</a>
-          <a href="#signup">Updates</a>
-        </div>
+    <div class="container hero">
+      <div class="hero-text">
+        <h1>Desktop Injection Molding for Makers</h1>
+        <p>
+          Explore a compact injection molding concept designed for makers, small shops,
+          and engineers.
+        </p>
+        <p class="hero-note">
+          A concept under development by engineering students at CMU
+        </p>
+        <a href="#signup" class="hero-button">Stay Updated</a>
       </div>
 
-      <div class="hero">
-        <div>
-          <h1>Desktop Injection Molding for Makers</h1>
-          <p>
-            Explore a compact injection molding concept designed for makers, small shops, and engineers.
-          </p>
-          <p class="hero-note">
-            A concept under development by engineering students at CMU
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#signup" class="btn btn-primary">Get Product Updates</a>
-            <a href="#video" class="btn btn-secondary">Watch the Demo</a>
-          </div>
-        </div>
-
-        <div class="hero-image">
-          <img src="machine.png" alt="Desktop Injection Molder">
-        </div>
+      <div class="hero-image">
+        <img src="machine.png" alt="Desktop injection molder concept render" />
       </div>
     </div>
   </header>
 
-  <section id="idea">
+  <section>
     <div class="container">
-      <h2 class="section-title">The Idea</h2>
-      <p class="section-subtitle">
+      <h2>The Idea</h2>
+      <p class="section-intro">
         Traditional injection molding is powerful but expensive and inaccessible.
         This concept aims to bring that capability to a desktop-sized machine for prototyping and small production.
       </p>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Compact Concept</h3>
+      <div class="features">
+        <div class="feature-card">
+          <h3>Compact Footprint</h3>
           <p>
-            Designed around a desktop-sized format for makers, engineers, and small shops.
+            Designed as a desktop-sized concept for workshops, labs, and maker spaces.
           </p>
         </div>
-        <div class="card">
+        <div class="feature-card">
+          <h3>Rapid Iteration</h3>
+          <p>
+            Intended to help users move beyond slow print cycles and test molded parts more efficiently.
+          </p>
+        </div>
+        <div class="feature-card">
           <h3>Accessible Manufacturing</h3>
           <p>
-            Built around the idea of making injection molding more approachable for smaller-scale use.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Early Validation</h3>
-          <p>
-            This page is being used to test interest and gather feedback as development continues.
+            Built around the idea of making small-batch plastic part production more approachable.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="video">
+  <section>
     <div class="container">
-      <div class="video-wrap">
-        <h2 class="section-title">See It In Action</h2>
+      <div class="video-wrapper">
+        <h2>See It in Action</h2>
         <p>Watch a video demonstrating the current model and overall concept.</p>
 
         <div class="video-card">
           <img src="https://img.youtube.com/vi/BjxiehGgbHU/maxresdefault.jpg" alt="DesktopMold video thumbnail">
-          <div class="video-content">
+          <div class="video-card-content">
             <p>Click below to watch the demo video on YouTube.</p>
-            <a class="video-button" href="https://youtu.be/BjxiehGgbHU" target="_blank">
+            <a class="video-link-btn" href="https://youtu.be/BjxiehGgbHU" target="_blank" rel="noopener noreferrer">
               Watch the Video
             </a>
           </div>
@@ -398,7 +342,7 @@
     </div>
   </section>
 
-  <section class="signup-section" id="signup">
+  <section id="signup">
     <div class="container">
       <div class="signup-box">
         <h2>Interested in This Concept?</h2>
@@ -406,21 +350,21 @@
           Enter your name and email to stay up to date about the product and its progress.
         </p>
 
-        <form>
-          <input type="text" placeholder="Your name" required>
-          <input type="email" placeholder="Your email" required>
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
           <button type="submit">Keep Me Updated</button>
         </form>
 
-        <p class="small">
-          No spam. Just updates on progress.
+        <p class="small-note">
+          No spam. Just updates on development and progress.
         </p>
       </div>
     </div>
   </section>
 
   <footer>
-    DesktopMold concept page — validating interest and collecting feedback.
+    <p>DesktopMold concept page — validating interest and collecting feedback.</p>
   </footer>
 
 </body>
